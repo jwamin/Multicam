@@ -20,22 +20,8 @@ class PreviewView: UIView {
     self.session = session
     self.index = index
     super.init(frame: .zero)
-    
-    session.beginConfiguration()
-    videoPreviewLayer.videoGravity = .resizeAspectFill
-    videoPreviewLayer.setSessionWithNoConnection(session)
-    
-    let videoPort = session.inputs[index].ports.first!
-    
-    let connection = MyConnection(inputPort: videoPort, videoPreviewLayer: videoPreviewLayer)
-    
-    print(connection,connection.videoMaxScaleAndCropFactor)
-    connection.isEnabled = true
 
-    session.addConnection(connection)
-    
-    print(session.connections)
-    session.commitConfiguration()
+    CameraController.addConnection(session: session, layer: videoPreviewLayer,index: index)
     
   }
   

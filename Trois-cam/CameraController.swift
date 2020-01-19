@@ -6,6 +6,7 @@
 //  Copyright © 2020 Joss Manger. All rights reserved.
 //
 
+import UIKit
 import AVFoundation
 import Combine
 
@@ -16,6 +17,21 @@ class CameraController {
   var captureSession: AVCaptureMultiCamSession? {
     return self.session
   }
+  
+  static func addConnection(session: AVCaptureMultiCamSession,layer: AVCaptureVideoPreviewLayer, index: Int){
+    
+    layer.videoGravity = .resizeAspectFill
+    layer.setSessionWithNoConnection(session)
+    
+    let videoPort = session.inputs[index].ports.first!
+    
+    let connection = MyConnection(inputPort: videoPort, videoPreviewLayer: layer)
+
+    session.addConnection(connection)
+    
+  }
+  
+  var anyCan:AnyCancellable!
   
   init() {
     
@@ -42,15 +58,55 @@ class CameraController {
     }
       let output = AVCaptureVideoDataOutput()
       //session.sessionPreset = AVCaptureSession.Preset.hd4K3840x2160
+    
+      UIDevice.current.beginGeneratingDeviceOrientationNotifications()
+    
       session.addOutput(output)
       session.commitConfiguration()
       
       session.startRunning()
   
+    anyCan = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification).sink { (notification) in
+      print(UIDevice.current.orientation)
+      
+      for connection in self.session.connections{
+      
+        switch UIDevice.current.orientation{
+        case .landscapeLeft:
+          connection.videoOrientation = .landscapeRight
+        case .landscapeRight:
+          connection.videoOrientation = .landscapeLeft
+        case .portraitUpsideDown:
+          connection.videoOrientation = .portraitUpsideDown
+        default:
+          connection.videoOrientation = .portrait
+        }
+      
+      }
+      
+      
+      }
+      
+//      func angleOffsetFromPortraitOrientation(at position: AVCaptureDevice.Position) -> Double {
+//        switch self {
+//        case .portrait:
+//          return position == .front ? .pi : 0
+//        case .portraitUpsideDown:
+//          return position == .front ? 0 : .pi
+//        case .landscapeRight:
+//          return -.pi / 2.0
+//        case .landscapeLeft:
+//          return .pi / 2.0
+//        default:
+//          return 0
+//        }
+//      }
+      
     
     #endif
     
   }
+  
   
   
 }
