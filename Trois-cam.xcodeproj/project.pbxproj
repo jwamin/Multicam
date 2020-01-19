@@ -9,21 +9,28 @@
 /* Begin PBXBuildFile section */
 		579AEADD23D4A07D00FD5D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AEADC23D4A07D00FD5D4B /* AppDelegate.swift */; };
 		579AEADF23D4A07D00FD5D4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AEADE23D4A07D00FD5D4B /* SceneDelegate.swift */; };
-		579AEAE123D4A07D00FD5D4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AEAE023D4A07D00FD5D4B /* ContentView.swift */; };
+		579AEAE123D4A07D00FD5D4B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AEAE023D4A07D00FD5D4B /* MainView.swift */; };
 		579AEAE323D4A08100FD5D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579AEAE223D4A08100FD5D4B /* Assets.xcassets */; };
 		579AEAE623D4A08100FD5D4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 579AEAE523D4A08100FD5D4B /* Preview Assets.xcassets */; };
 		579AEAE923D4A08100FD5D4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 579AEAE723D4A08100FD5D4B /* LaunchScreen.storyboard */; };
+		579AEAF123D4A0C400FD5D4B /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AEAF023D4A0C400FD5D4B /* CameraView.swift */; };
+		579AEAF323D4A27800FD5D4B /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AEAF223D4A27800FD5D4B /* CameraController.swift */; };
+		579AEAF523D4A57700FD5D4B /* LayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579AEAF423D4A57700FD5D4B /* LayerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		579AEAD923D4A07D00FD5D4B /* Trois-cam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trois-cam.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		579AEADC23D4A07D00FD5D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		579AEADE23D4A07D00FD5D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		579AEAE023D4A07D00FD5D4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		579AEAE023D4A07D00FD5D4B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		579AEAE223D4A08100FD5D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		579AEAE523D4A08100FD5D4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		579AEAE823D4A08100FD5D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		579AEAEA23D4A08100FD5D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		579AEAF023D4A0C400FD5D4B /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		579AEAF223D4A27800FD5D4B /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		579AEAF423D4A57700FD5D4B /* LayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerController.swift; sourceTree = "<group>"; };
+		579AEAF623D4E11300FD5D4B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +47,7 @@
 		579AEAD023D4A07D00FD5D4B = {
 			isa = PBXGroup;
 			children = (
+				579AEAF623D4E11300FD5D4B /* README.md */,
 				579AEADB23D4A07D00FD5D4B /* Trois-cam */,
 				579AEADA23D4A07D00FD5D4B /* Products */,
 			);
@@ -58,7 +66,10 @@
 			children = (
 				579AEADC23D4A07D00FD5D4B /* AppDelegate.swift */,
 				579AEADE23D4A07D00FD5D4B /* SceneDelegate.swift */,
-				579AEAE023D4A07D00FD5D4B /* ContentView.swift */,
+				579AEAE023D4A07D00FD5D4B /* MainView.swift */,
+				579AEAF223D4A27800FD5D4B /* CameraController.swift */,
+				579AEAF023D4A0C400FD5D4B /* CameraView.swift */,
+				579AEAF423D4A57700FD5D4B /* LayerController.swift */,
 				579AEAE223D4A08100FD5D4B /* Assets.xcassets */,
 				579AEAE723D4A08100FD5D4B /* LaunchScreen.storyboard */,
 				579AEAEA23D4A08100FD5D4B /* Info.plist */,
@@ -148,7 +159,10 @@
 			files = (
 				579AEADD23D4A07D00FD5D4B /* AppDelegate.swift in Sources */,
 				579AEADF23D4A07D00FD5D4B /* SceneDelegate.swift in Sources */,
-				579AEAE123D4A07D00FD5D4B /* ContentView.swift in Sources */,
+				579AEAE123D4A07D00FD5D4B /* MainView.swift in Sources */,
+				579AEAF123D4A0C400FD5D4B /* CameraView.swift in Sources */,
+				579AEAF323D4A27800FD5D4B /* CameraController.swift in Sources */,
+				579AEAF523D4A57700FD5D4B /* LayerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
